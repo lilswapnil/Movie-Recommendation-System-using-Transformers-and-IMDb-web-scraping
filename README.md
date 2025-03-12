@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.
 
 ## Overview
@@ -103,3 +104,61 @@ The project uses a CSV file named `imdb_top_1000.csv` containing metadata about 
 - The dataset used in this project is sourced from [IMDb](https://www.imdb.com).
 - The BERT model is provided by the [Hugging Face Transformers](https://huggingface.co/transformers/) library.
 
+=======
+# Movie Recommendation System
+
+This project is a movie recommendation system built using Streamlit and Transformers. It allows users to receive personalized movie recommendations based on their preferences, including specific movie titles and IMDb ratings.
+
+## Project Structure
+
+```
+movie-recommendation-streamlit
+├── src
+│   ├── app.py          # Main entry point for the Streamlit application
+│   ├── trans2.py       # Contains the movie recommendation logic
+│   └── utils.py        # Utility functions for data processing
+├── requirements.txt     # Lists the dependencies required for the project
+└── README.md            # Documentation for the project
+```
+
+## Setup Instructions
+
+1. **Clone the repository:**
+   ```
+   git clone <repository-url>
+   cd movie-recommendation-streamlit
+   ```
+
+2. **Create a virtual environment (optional but recommended):**
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. **Install the required dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Usage Guidelines
+
+1. **Run the Streamlit application:**
+   ```
+   streamlit run src/app.py
+   ```
+
+2. **Interact with the application:**
+   - Enter movie titles in double quotes (e.g., "Inception").
+   - Specify the minimum IMDb rating using the format `imdb:<rating>` (e.g., `imdb:8`).
+
+3. **View recommended movies:**
+   - The application will display a list of recommended movies based on your input.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+>>>>>>> 91b84df (first commit)
