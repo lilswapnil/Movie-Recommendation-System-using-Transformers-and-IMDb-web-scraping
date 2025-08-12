@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.
+# Transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.
 
 ## Overview
 This project implements a movie recommendation system using BERT embeddings to process and analyze user inputs. It allows users to specify their preferences through natural language queries, and the system recommends movies based on the provided input. The system also incorporates IMDb ratings and previously mentioned movie preferences to refine recommendations.
