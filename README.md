@@ -1,105 +1,169 @@
-# transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.
+Transformers-Powered Movie Recommendation System (IMDb Scraping)
+📖 Overview
 
-## Overview
-This project implements a movie recommendation system using BERT embeddings to process and analyze user inputs. It allows users to specify their preferences through natural language queries, and the system recommends movies based on the provided input. The system also incorporates IMDb ratings and previously mentioned movie preferences to refine recommendations.
+This project is a BERT-powered movie recommendation engine that processes natural language user queries to suggest personalized movie recommendations. Users can input preferences such as specific movie titles or minimum IMDb ratings, and the system generates recommendations by analyzing semantic similarity between user queries and movie metadata.
 
-## Features
-1. **User Input Parsing**:
-   - Allows users to specify movie names within double inverted commas (e.g., "Inception").
-   - IMDb ratings can be mentioned as `imdb:<rating>` (e.g., `imdb:8.2`).
-2. **BERT Embeddings**:
-   - Utilizes the BERT model to create embeddings for movie overviews and user input.
-3. **Similarity Calculation**:
-   - Computes weighted cosine similarity between user input and movie embeddings to recommend movies.
-4. **Customizable Recommendations**:
-   - Users can set a minimum IMDb rating and include specific movies to personalize recommendations.
-5. **Top Movie Suggestions**:
-   - Recommends the top 15 movies based on similarity scores.
+Recommendations are refined using IMDb ratings and previously mentioned movie preferences, ensuring high-quality, tailored results.
 
-## Requirements
-- Python 3.7+
-- Required Libraries:
-  - pandas
-  - numpy
-  - torch
-  - transformers
-  - scikit-learn
-  - re
+✨ Features
 
-## Dataset
-The project uses a CSV file named `imdb_top_1000.csv` containing metadata about movies. The dataset should include at least the following columns:
-- `Genre`
-- `Series_Title`
-- `IMDB_Rating`
-- `Overview`
+User Input Parsing
 
-## Installation
-1. Clone this repository or download it directly from github using this link. 'https://github.com/thiru2024/transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.'
-2. Install the required libraries using pip:
-   ```bash
-   pip install pandas numpy torch transformers scikit-learn
-   ```
-3. Download the `imdb_top_1000.csv` dataset and place it in the appropriate directory. Update the `file_path` variable in the script to match the dataset's location.
+Recognizes movie names wrapped in double quotes (e.g., "Inception").
 
-## Usage
-1. Run the script using:
-   ```bash
-   python trans2.py
-   ```
-2. Follow the prompts:
-   - Mention movie names within double inverted commas (e.g., "Inception").
-   - Specify IMDb rating with the format `imdb:<rating>` (e.g., `imdb:8.2`).
-3. The system will display the top 15 recommended movies.
+Supports IMDb rating filters via imdb:<rating> (e.g., imdb:8.2).
 
-## Code Walkthrough
+BERT Embeddings
 
-### Data Loading and Preprocessing
-- The CSV file is loaded using pandas and filtered to retain relevant columns (`Genre`, `Series_Title`, `IMDB_Rating`, `Overview`).
+Leverages Hugging Face’s bert-base-uncased model for semantic embeddings of movie overviews and user input.
 
-### BERT Model Integration
-- The `transformers` library is used to load the BERT tokenizer and model (`bert-base-uncased`).
-- Movie overviews are tokenized and converted into BERT embeddings.
+Similarity Calculation
 
-### User Input Processing
-- The input is preprocessed to normalize the text and extract movie names and IMDb ratings.
+Computes cosine similarity between input and dataset embeddings.
 
-### Similarity Calculation
-- Cosine similarity is calculated between user input embeddings and movie embeddings.
-- Weighted similarity scores are computed if the user specifies movies they like.
+Uses weighted similarity when specific movies are included in the query.
 
-### Recommendation
-- The top 15 movies with the highest similarity scores are returned as recommendations.
+Customizable Recommendations
 
-## Example Input and Output
-### Input
-- User prompt:
-  ```
-  "Inception" imdb:8
-  ```
+Apply IMDb rating filters.
 
-### Output
-- Recommended Movies:
-  ```
-  1. The Dark Knight
-  2. Interstellar
-  3. Fight Club
-  4. ...
-  ```
+Include specific movies to fine-tune results.
 
-## Customization
-- **Adjusting IMDb Filter**: Modify the `extract_imdb_rating` function to change the behavior of IMDb filtering.
-- **Number of Recommendations**: Update the number of top movies in the `recommend_movies` function.
+Top-N Suggestions
 
-## Limitations
-- The system relies on the quality and coverage of the `imdb_top_1000.csv` dataset.
-- BERT embeddings are computationally intensive for large datasets.
+Returns the top 15 most relevant movies ranked by similarity score.
 
-## Future Enhancements
-- Incorporate additional metadata like genres and cast to improve recommendations.
-- Optimize embeddings using a fine-tuned BERT model for movie data.
-- Allow for more complex queries, including genre preferences or keyword-based filtering.
+⚙️ Requirements
 
-## Acknowledgments
-- The dataset used in this project is sourced from [IMDb](https://www.imdb.com).
-- The BERT model is provided by the [Hugging Face Transformers](https://huggingface.co/transformers/) library.
+Python 3.7+
 
+Dependencies:
+
+pandas
+
+numpy
+
+torch
+
+transformers
+
+scikit-learn
+
+re
+
+📊 Dataset
+
+The system uses the file imdb_top_1000.csv, which must contain the following columns:
+
+Genre
+
+Series_Title
+
+IMDB_Rating
+
+Overview
+
+🔧 Installation
+
+Clone this repository or download it:
+
+git clone https://github.com/thiru2024/transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.git
+cd transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping
+
+
+Install dependencies:
+
+pip install pandas numpy torch transformers scikit-learn
+
+
+Download the dataset imdb_top_1000.csv and place it in the working directory.
+Update the file_path variable in the script to point to the dataset location.
+
+▶️ Usage
+
+Run the script:
+
+python trans2.py
+
+
+Follow the prompts:
+
+Enter movie names in double quotes (e.g., "Inception").
+
+Specify minimum IMDb ratings (e.g., imdb:8).
+
+The system will return the top 15 recommended movies.
+
+🛠 Code Walkthrough
+1. Data Loading & Preprocessing
+
+Loads dataset via pandas.
+
+Filters relevant columns (Genre, Series_Title, IMDB_Rating, Overview).
+
+2. BERT Model Integration
+
+Loads BERT tokenizer & model (bert-base-uncased).
+
+Converts movie overviews into embeddings.
+
+3. User Input Processing
+
+Normalizes text and extracts movie names / IMDb rating constraints.
+
+4. Similarity Calculation
+
+Computes cosine similarity between input embeddings and movie embeddings.
+
+Adjusts weighting if specific movies are mentioned.
+
+5. Recommendation
+
+Returns top 15 matches ranked by similarity scores.
+
+🖥 Example
+
+Input:
+
+"Inception" imdb:8
+
+
+Output:
+
+Recommended Movies:
+1. The Dark Knight
+2. Interstellar
+3. Fight Club
+4. Memento
+5. The Prestige
+...
+
+⚡ Customization
+
+IMDb Filter → Adjust extract_imdb_rating() for custom thresholds.
+
+Number of Results → Change output size in recommend_movies() function.
+
+🚧 Limitations
+
+Limited to imdb_top_1000.csv dataset quality.
+
+Embedding generation with BERT is computationally expensive for large datasets.
+
+🔮 Future Enhancements
+
+Include genre and cast-based filtering.
+
+Fine-tune BERT embeddings on movie-specific datasets.
+
+Add complex query support (e.g., “sci-fi thrillers with rating > 8”).
+
+Optimize performance for larger movie datasets.
+
+🙏 Acknowledgments
+
+Dataset sourced from IMDb
+.
+
+BERT model provided by Hugging Face Transformers
+.
