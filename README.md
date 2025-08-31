@@ -92,7 +92,7 @@ This project is a BERT-powered movie recommendation engine...
 ## 🖥 Example Results
 
 <p align="center">
-  <img src="assets/result.png" alt="Example recommendation output results" width="500">
+  <img src="assets/result.png" alt="Example recommendation output results" height="500" width="800">
   <br/>
   <em>Sample recommendations returned by the system for query inputs.</em>
 </p>
