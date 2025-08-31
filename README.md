@@ -76,6 +76,8 @@ Specify minimum IMDb ratings (e.g., imdb:8).
 
 The system will return the top 15 recommended movies.
 
+images/diagram.png
+
 🛠 Code Walkthrough
 1. Data Loading & Preprocessing
 Loads dataset via pandas.
