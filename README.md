@@ -76,7 +76,12 @@ Specify minimum IMDb ratings (e.g., imdb:8).
 
 The system will return the top 15 recommended movies.
 
-https://github.com/lilswapnil/Movie-Recommendation-System-using-Transformers-and-IMDb-web-scraping/raw/main/images/diagram.png
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lilswapnil/Movie-Recommendation-System-using-Transformers-and-IMDb-web-scraping/main/images/diagram.png" alt="System diagram: Transformers-powered movie recommendation flow" width="800">
+  <br/>
+  <em>High-level flow of the BERT-powered recommendation pipeline.</em>
+</p>
+
 
 🛠 Code Walkthrough
 1. Data Loading & Preprocessing
