@@ -76,7 +76,7 @@ Specify minimum IMDb ratings (e.g., imdb:8).
 
 The system will return the top 15 recommended movies.
 
-https://github.com/lilswapnil/Movie-Recommendation-System-using-Transformers-and-IMDb-web-scraping/images/diagram.png
+https://github.com/lilswapnil/Movie-Recommendation-System-using-Transformers-and-IMDb-web-scraping/raw/main/images/diagram.png
 
 🛠 Code Walkthrough
 1. Data Loading & Preprocessing
