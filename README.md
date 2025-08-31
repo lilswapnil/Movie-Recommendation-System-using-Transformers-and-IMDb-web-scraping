@@ -52,7 +52,7 @@ The system uses the file **`imdb_top_1000.csv`**, which must contain the followi
 ## 🔧 Installation
 1. Clone this repository or download it:  
    ```bash
-   git clone https://github.com/thiru2024/transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping.git
+   git clone https://github.com/lilswapnil/Movie-Recommendation-System-using-Transformers-and-IMDb-web-scraping.git
    cd transformers-powered-Movies-recommendation-system-using-IMDB-web-scraping
 Install dependencies:
 
